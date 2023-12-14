@@ -31,3 +31,7 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
+
+streamlit.header("What fruit would you like to add?")
+add_my_fruit = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+add_my_fruit = add_my_fruit.set_index('Fruit')
